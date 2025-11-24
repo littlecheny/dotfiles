@@ -34,7 +34,6 @@
 
   # zoxide (智能 cd)
   eval "$(zoxide init zsh)"
-  alias cd='z'
 
   # ripgrep
   alias grep='rg'
