@@ -73,9 +73,23 @@
   # ========================================
   # 快捷配置管理
   # ========================================
-  alias zshconfig="code ~/.zshrc"
   alias reload="source ~/.zshrc && echo '✓ 配置已重新加载'"
 
+  cursor() {
+    if [ $# -eq 0 ]; then
+      open -a "Cursor"
+    else
+      open -a "Cursor" "$@"
+    fi
+  }
+
+  antigravity() {
+    if [ $# -eq 0 ]; then
+      open -a "Antigravity"
+    else
+      open -a "Antigravity" "$@"
+    fi
+  }
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -84,8 +98,8 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
-
 ### End of Zinit's installer chunk
+
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
