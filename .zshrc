@@ -64,11 +64,28 @@
   zstyle ':completion:*' menu select
   zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
-  # ========================================
-  # PATH 配置
-  # ========================================
-  export PATH="$HOME/.local/bin:$PATH"
-  export PATH="/opt/homebrew/bin:$PATH"
+# ========================================
+# PATH 配置
+# ========================================
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+# 添加 workdoc 到 PATH
+export PATH="$HOME/workspace/workdoc:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
   # ========================================
   # 快捷配置管理
@@ -90,6 +107,14 @@
       open -a "Antigravity" "$@"
     fi
   }
+
+ code(){
+   if [ $# -eq 0 ]; then
+     open -a "Visual Studio Code"
+   else
+     open -a "Visual Studio Code" "$@"
+   fi
+ }
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
