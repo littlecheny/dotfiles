@@ -25,6 +25,7 @@
   # bat (更好的 cat)
   alias cat='bat --style=plain'
   alias catp='bat --style=full'
+  alias clr='clear'
 
   # eza (更好的 ls)
   alias ls='eza --icons'
