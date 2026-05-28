@@ -60,6 +60,8 @@
   # ========================================
   # 补全系统
   # ========================================
+# opencli completion
+fpath=(/Users/bytedance/.zsh/completions $fpath)
   autoload -U compinit && compinit
   zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
   zstyle ':completion:*' menu select
@@ -71,8 +73,8 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 # 添加 workdoc 到 PATH
-export PATH="$HOME/workspace/workdoc:$PATH"
-
+#export PATH="$HOME/workdoc:$PATH"
+export PATH="/Users/bytedance/claude-code/workdoc_runtime_impl:$PATH"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -111,9 +113,17 @@ unset __conda_setup
 
  code(){
    if [ $# -eq 0 ]; then
-     open -a "Visual Studio Code"
+     open -a "Trae CN"
    else
-     open -a "Visual Studio Code" "$@"
+     open -a "Trae CN" "$@"
+   fi
+ }
+
+ codex(){
+   if [ $# -eq 0 ]; then
+     open -a "CodeX"
+   else
+     open -a "CodeX" "$@"
    fi
  }
 
@@ -136,4 +146,10 @@ export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebr
 export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"export PATH="/usr/local/go/bin:$PATH"
+export GOPATH="$HOME/go"
+export GOROOT="/usr/local/go"
+
+# OpenClaw Completion
+source "/Users/bytedance/.openclaw/completions/openclaw.zsh"
+export PATH="$HOME/.bun/bin:$PATH"
