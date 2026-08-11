@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/bytedance/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 
   # Zinit 插件管理器
   ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -153,3 +160,15 @@ export GOROOT="/usr/local/go"
 # OpenClaw Completion
 source "/Users/bytedance/.openclaw/completions/openclaw.zsh"
 export PATH="$HOME/.bun/bin:$PATH"
+
+# Added by bam-cli installer
+export PATH="/Users/bytedance/.local/bin:$PATH"
+
+# Added by bam-cli installer
+export PATH="/Users/bytedance/.local/bin:$PATH"
+# >>> ttadk completion >>>
+source "$HOME/.ttadk/completion/ttadk.zsh"
+# <<< ttadk completion <<<
+
+# Added by bam-cli installer
+export PATH="/Users/bytedance/.local/bin:$PATH"
